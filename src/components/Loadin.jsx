@@ -20,13 +20,13 @@ const Loading = ({ onLoadingComplete }) => {
   }, [onLoadingComplete]);
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-wiith-600 to-black-700 flex flex-col items-center justify-center z-50">
+    <div className="fixed inset-0 bg-gradient-to-br from-with-600 to-black-700 flex flex-col items-center justify-center z-50">
       {/* Logo o Nombre */}
       <div className="mb-8 text-center">
         <h1 className="text-5xl font-bold text-black mb-2">
           Bienvenido
         </h1>
-        <p className="text-balck/100 text-lg animate-pulse">Cargando...</p>
+        <p className="text-black/90 text-lg animate-pulse">Cargando...</p>
       </div>
 
       {/* Barra de progreso */}
