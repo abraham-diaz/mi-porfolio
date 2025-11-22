@@ -20,25 +20,25 @@ const Loading = ({ onLoadingComplete }) => {
   }, [onLoadingComplete]);
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-blue-600 to-purple-700 flex flex-col items-center justify-center z-50">
+    <div className="fixed inset-0 bg-gradient-to-br from-wiith-600 to-black-700 flex flex-col items-center justify-center z-50">
       {/* Logo o Nombre */}
       <div className="mb-8 text-center">
-        <h1 className="text-5xl font-bold text-white mb-2 animate-pulse">
+        <h1 className="text-5xl font-bold text-black mb-2">
           Bienvenido
         </h1>
-        <p className="text-white/80 text-lg">Cargando...</p>
+        <p className="text-balck/100 text-lg animate-pulse">Cargando...</p>
       </div>
 
       {/* Barra de progreso */}
-      <div className="w-80 h-2 bg-white/20 rounded-full overflow-hidden">
+      <div className="w-80 h-2 bg-black/20 rounded-full overflow-hidden">
         <div
-          className="h-full bg-white rounded-full transition-all duration-300 ease-out"
+          className="h-full bg-black rounded-full transition-all duration-300 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>
 
       {/* Porcentaje */}
-      <p className="text-white mt-4 text-xl font-semibold">
+      <p className="text-black mt-4 text-xl font-semibold animate-pulse">
         {progress}%
       </p>
     </div>
