@@ -18,6 +18,41 @@ export function useScrollDetection() {
 }
 
 /**
+ * Hook para detectar la dirección del scroll y mostrar/ocultar el header
+ * @returns {boolean} true si el header debe estar visible, false si debe ocultarse
+ */
+export function useScrollDirection() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Mostrar header si está en el top
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      }
+      // Ocultar si hace scroll hacia abajo
+      else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      }
+      // Mostrar si hace scroll hacia arriba
+      else if (currentScrollY < lastScrollY) {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+  return isVisible;
+}
+
+/**
  * Función para navegación suave a las secciones
  * @param sectionId - ID de la sección a la que navegar
  * @param onNavigate - Callback opcional a ejecutar después de navegar
