@@ -10,7 +10,7 @@ import Footer from './components/Footer.jsx';
 // COLOR GLOBAL DEL PORTFOLIO
 // Para gradiente, usa: 'linear-gradient(to bottom right, #ColorInicial, #ColorFinal)'
 // Para color sólido, usa: '#CodigoColor'
-const BACKGROUND_GLOBAL = 'linear-gradient(to bottom right, #fafafa, #e8e8e8)';
+const BACKGROUND_GLOBAL = 'linear-gradient(to bottom right, #ffffff, #f5f5f5)';
 
 function App() {
   const [loading, setLoading] = useState(true);
