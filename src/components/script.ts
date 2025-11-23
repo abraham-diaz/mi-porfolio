@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 // Variable global para rastrear si el scroll es programático
 let isProgrammaticScroll = false;
+let scrollTimeout: NodeJS.Timeout | null = null;
 
 /**
  * Hook para detectar el scroll y cambiar el estilo del header
@@ -73,6 +74,11 @@ export function scrollToSection(sectionId: string, onNavigate?: () => void) {
     // Marcar que el scroll es programático
     isProgrammaticScroll = true;
 
+    // Cancelar el timeout anterior si existe
+    if (scrollTimeout) {
+      clearTimeout(scrollTimeout);
+    }
+
     const offset = 80; // Altura del header
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - offset;
@@ -83,8 +89,9 @@ export function scrollToSection(sectionId: string, onNavigate?: () => void) {
     });
 
     // Después de que termine el scroll suave (~1.5 segundos), volver a permitir detección
-    setTimeout(() => {
+    scrollTimeout = setTimeout(() => {
       isProgrammaticScroll = false;
+      scrollTimeout = null;
     }, 1500);
   }
 
