@@ -39,7 +39,7 @@ export default function Header() {
                     ? 'bg-gray-900 text-white shadow-lg'
                     : isScrolled
                     ? 'text-gray-700 hover:bg-white hover:shadow'
-                    : 'text-white hover:bg-white/20'
+                    : 'text-black hover:bg-white/20'
                 }`}
               >
                 {item.name}

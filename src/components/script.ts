@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 
+// Variable global para rastrear si el scroll es programático
+let isProgrammaticScroll = false;
+
 /**
  * Hook para detectar el scroll y cambiar el estilo del header
  */
@@ -28,6 +31,13 @@ export function useScrollDirection() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+
+      // Ignorar el scroll si es programático (navegación por botones)
+      if (isProgrammaticScroll) {
+        // Actualizar lastScrollY para evitar saltos cuando termine el scroll programático
+        setLastScrollY(currentScrollY);
+        return;
+      }
 
       // Mostrar header si está en el top
       if (currentScrollY < 10) {
@@ -60,6 +70,9 @@ export function useScrollDirection() {
 export function scrollToSection(sectionId: string, onNavigate?: () => void) {
   const element = document.getElementById(sectionId);
   if (element) {
+    // Marcar que el scroll es programático
+    isProgrammaticScroll = true;
+
     const offset = 80; // Altura del header
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - offset;
@@ -68,6 +81,11 @@ export function scrollToSection(sectionId: string, onNavigate?: () => void) {
       top: offsetPosition,
       behavior: 'smooth'
     });
+
+    // Después de que termine el scroll suave (~1.5 segundos), volver a permitir detección
+    setTimeout(() => {
+      isProgrammaticScroll = false;
+    }, 1500);
   }
 
   if (onNavigate) {
