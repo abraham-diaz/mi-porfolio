@@ -29,9 +29,7 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center gap-4">
           {/* Navegación Desktop - Estilo Pill Centrado */}
-          <nav className={`hidden md:flex items-center gap-1 p-1.5 rounded-full ${
-            isScrolled ? 'bg-gray-100' : 'bg-white/20 backdrop-blur-sm'
-          }`}>
+          <nav className={'bg-white/20 backdrop-blur-sm'}>
             {navItems.map((item) => (
               <button
                 key={item.id}

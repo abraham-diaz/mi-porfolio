@@ -9,7 +9,7 @@ export default function Hero() {
           Desarrollador Full Stack
         </p>
         <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-          Aqu� puedes a�adir una breve descripci�n sobre ti y tu experiencia
+          Aquí puedes añadir una breve descripción sobre ti y tu experiencia
         </p>
       </div>
     </div>

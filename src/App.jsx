@@ -7,6 +7,11 @@ import Projects from './components/Projects.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 
+// COLOR GLOBAL DEL PORTFOLIO
+// Para gradiente, usa: 'linear-gradient(to bottom right, #ColorInicial, #ColorFinal)'
+// Para color sólido, usa: '#CodigoColor'
+const BACKGROUND_GLOBAL = 'linear-gradient(to bottom right, #fafafa, #e8e8e8)';
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -17,7 +22,7 @@ function App() {
 
       {/* Contenido principal del portfolio */}
       {!loading && (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen" style={{ background: BACKGROUND_GLOBAL }}>
           {/* Header fijo con navegación */}
           <Header />
 
