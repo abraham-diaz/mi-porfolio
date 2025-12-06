@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactIcon, ViteIcon, TailwindIcon, JavaScriptIcon, NodeIcon, TypeScriptIcon } from './TechIcons';
+import { ReactIcon, ViteIcon, TailwindIcon, JavaScriptIcon, NodeIcon, TypeScriptIcon, ExpressIcon, PrismaIcon, PHPIcon, MySQLIcon, DockerIcon, APIIcon } from './TechIcons';
 
 export default function Hero() {
   return (
@@ -53,91 +53,73 @@ export default function Hero() {
         </div>
         
 <div className="relative">
-          <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl shadow-2xl overflow-hidden aspect-square relative">
-            
-            {/* Iconos flotantes con logos oficiales */}
-            <div className="relative">
-          <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl shadow-2xl overflow-hidden aspect-square relative">
-            
-            {/* Iconos SVG optimizados */}
-            <div className="absolute top-12 left-12 text-blue-400 animate-float">
-              <ReactIcon size={70} />
+          <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl shadow-2xl overflow-hidden aspect-[4/3] max-w-lg mx-auto relative">
+
+            {/* Iconos SVG optimizados - Fila superior */}
+            <div className="absolute top-8 left-16 text-blue-400 animate-float">
+              <ReactIcon size={40} />
             </div>
-            
-            <div className="absolute top-16 right-16 text-yellow-400 animate-float-delayed">
-              <JavaScriptIcon size={60} />
+
+            <div className="absolute top-8 left-1/2 -translate-x-1/2 text-yellow-400 animate-float-delayed">
+              <JavaScriptIcon size={38} />
             </div>
-            
-            <div className="absolute bottom-24 left-16 text-green-500 animate-float-slow">
-              <NodeIcon size={60} />
+
+            <div className="absolute top-8 right-16 text-blue-500 animate-float-slow">
+              <TypeScriptIcon size={38} />
             </div>
-            
-            <div className="absolute bottom-16 right-12 text-cyan-400 animate-float-delayed-2">
-              <TailwindIcon size={70} />
+
+            {/* Iconos laterales */}
+            <div className="absolute top-1/2 -translate-y-1/2 left-12 text-green-500 animate-float-slow">
+              <NodeIcon size={38} />
             </div>
-            
-            <div className="absolute top-1/2 left-8 text-purple-400 animate-float">
-              <ViteIcon size={50} />
+
+            <div className="absolute top-1/2 -translate-y-1/2 right-12 text-gray-300 animate-float">
+              <ExpressIcon size={38} />
             </div>
-            
-            <div className="absolute top-1/3 right-8 text-blue-500 animate-float-slow">
-              <TypeScriptIcon size={50} />
+
+            {/* Fila inferior */}
+            <div className="absolute bottom-8 left-12 text-indigo-400 animate-float-delayed">
+              <PrismaIcon size={38} />
             </div>
-            
+
+            <div className="absolute bottom-8 left-1/3 text-indigo-300 animate-float">
+              <PHPIcon size={36} />
+            </div>
+
+            <div className="absolute bottom-8 right-1/3 text-orange-400 animate-float-slow">
+              <MySQLIcon size={36} />
+            </div>
+
+            <div className="absolute bottom-8 right-12 text-blue-400 animate-float-delayed-2">
+              <DockerIcon size={38} />
+            </div>
+
             {/* Texto central */}
             <div className="absolute inset-0 flex items-center justify-center text-white text-center z-10">
               <div>
-                <h3 className="text-5xl font-bold mb-4 tracking-tight">
-                  Full Stack
+                <h3 className="text-4xl font-bold mb-3 tracking-tight">
+                  Software
                 </h3>
-                <p className="text-2xl text-gray-400 font-light">
+                <p className="text-xl text-gray-400 font-light">
                   Developer
                 </p>
-                <div className="mt-6 flex gap-3 justify-center flex-wrap px-4">
-                  <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
-                    React
+                <div className="mt-4 flex gap-2 justify-center flex-wrap px-4">
+                  <span className="px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium border border-white/20">
+                    APIs
                   </span>
-                  <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
-                    Vite
+                  <span className="px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium border border-white/20">
+                    MySQL
                   </span>
-                  <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
-                    Tailwind
+                  <span className="px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium border border-white/20">
+                    Docker
                   </span>
                 </div>
               </div>
             </div>
-            
-            <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 to-transparent pointer-events-none"></div>
-            
-          </div>
-        </div>
-            
-            {/* Texto central */}
-            <div className="absolute inset-0 flex items-center justify-center text-white text-center z-10">
-              <div>
-                <h3 className="text-5xl font-bold mb-4 tracking-tight">
-                  Full Stack
-                </h3>
-                <p className="text-2xl text-gray-400 font-light">
-                  Developer
-                </p>
-                <div className="mt-6 flex gap-3 justify-center flex-wrap px-4">
-                  <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
-                    React
-                  </span>
-                  <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
-                    Vite
-                  </span>
-                  <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
-                    Tailwind
-                  </span>
-                </div>
-              </div>
-            </div>
-            
+
             {/* Efecto de brillo */}
             <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 to-transparent pointer-events-none"></div>
-            
+
           </div>
         </div>
         
