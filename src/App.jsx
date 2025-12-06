@@ -2,7 +2,8 @@ import { useState } from 'react';
 import Loading from './components/Loadin.jsx';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
-import Skills from './components/Skills.jsx';
+import AboutMe from './components/AboutMe.jsx';
+import TechSkills from './components/TechSkills.jsx';
 import Projects from './components/Projects.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
@@ -31,9 +32,14 @@ function App() {
             <Hero />
           </section>
 
-          {/* Sección Skills - Habilidades y tecnologías */}
+          {/* Sección Sobre mí */}
+          <section id="about">
+            <AboutMe />
+          </section>
+
+          {/* Sección Skills - Tecnologías */}
           <section id="skills">
-            <Skills />
+            <TechSkills />
           </section>
 
           {/* Sección Projects - Proyectos realizados */}
