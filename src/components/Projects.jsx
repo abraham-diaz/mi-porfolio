@@ -1,35 +1,31 @@
 const projects = [
   {
-    title: 'laYaya',
-    description: 'Web comparadora de precios de distintos supermercados. Arquitectura MVC con gestión de sesiones y base de datos.',
-    technologies: ['PHP', 'MySQL', 'CSS', 'JavaScript'],
-    github: 'https://github.com/abraham-diaz/laYaya',
-    image: '/images/layaya.png',
-    color: 'from-green-400 to-emerald-600',
+    title: 'GLaDOs',
+    description: 'Sistema de gestión de conocimiento personal con IA. Captura texto libre, genera embeddings duales (MiniLM + MPNet) y organiza el conocimiento en conceptos que evolucionan automáticamente según su recurrencia.',
+    technologies: ['TypeScript', 'Express', 'FastAPI', 'PostgreSQL', 'pgvector', 'Docker'],
+    github: null,
+    image: '/images/glados.png',
+    color: 'from-amber-400 to-orange-600',
   },
   {
-    title: 'Calendario',
-    description: 'Calendario visual interactivo para gestionar eventos. Permite crear, editar y eliminar eventos con interfaz intuitiva.',
-    technologies: ['Node.js', 'Express', 'SQLite', 'FullCalendar'],
-    github: 'https://github.com/abraham-diaz/Calendario',
-    image: null, // Añade aquí la ruta: '/images/calendario.png'
-    color: 'from-yellow-400 to-amber-500',
+    title: 'devstarter-cli',
+    description: 'CLI publicada en npm que automatiza el scaffolding de proyectos con templates profesionales. Soporta frontend, backend y monorepo con detección automática de package manager.',
+    technologies: ['TypeScript', 'Node.js', 'Vitest', 'npm'],
+    github: 'https://github.com/abraham-diaz/devstarter-cli',
+    link: 'https://www.npmjs.com/package/devstarter-tool',
+    linkLabel: 'npm',
+    image: '/images/devstarter.svg',
+    color: 'from-green-400 to-emerald-600',
   },
   {
     title: 'DevUtils Manager',
     description: 'Extensión para VS Code que permite guardar, organizar e insertar fragmentos de código reutilizables.',
     technologies: ['TypeScript', 'VS Code API', 'Webpack'],
     github: 'https://github.com/abraham-diaz/devutils-manager',
-    image: '/images/devutils.png',
-    bgColor: '#3a99f7',
-  },
-  {
-    title: 'Todo App',
-    description: 'Aplicación de gestión de tareas construida con React y TypeScript usando Vite como bundler.',
-    technologies: ['React', 'TypeScript', 'Vite'],
-    github: 'https://github.com/abraham-diaz/todo-app',
-    image: null, // Añade aquí la ruta: '/images/todoapp.png'
-    color: 'from-orange-400 to-red-500',
+    link: 'https://marketplace.visualstudio.com/items?itemName=abrahamdiazdev.devutils-manager',
+    linkLabel: 'VS Marketplace',
+    image: '/images/devutils.svg',
+    color: 'from-blue-500 to-blue-700',
   },
 ];
 
@@ -70,17 +66,34 @@ export default function Projects() {
                   </div>
                 )}
 
-                {/* Overlay con enlace a GitHub */}
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/40 transition-colors"
-                >
-                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                  </svg>
-                </a>
+                {/* Overlay con enlaces */}
+                <div className="absolute top-4 right-4 flex gap-2">
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full hover:bg-white/40 transition-colors flex items-center gap-1.5"
+                    >
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                      </svg>
+                      <span className="text-white text-xs font-medium">{project.linkLabel}</span>
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/40 transition-colors"
+                    >
+                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                      </svg>
+                    </a>
+                  )}
+                </div>
               </div>
 
               {/* Contenido */}

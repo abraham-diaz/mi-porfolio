@@ -2,10 +2,10 @@ import { useState } from 'react';
 import Loading from './components/Loadin.jsx';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
-import AboutMe from './components/AboutMe.jsx';
+
 import TechSkills from './components/TechSkills.jsx';
 import Projects from './components/Projects.jsx';
-import Contact from './components/Contact.jsx';
+
 import Footer from './components/Footer.jsx';
 
 // COLOR GLOBAL DEL PORTFOLIO
@@ -32,11 +32,6 @@ function App() {
             <Hero />
           </section>
 
-          {/* Sección Sobre mí */}
-          <section id="about">
-            <AboutMe />
-          </section>
-
           {/* Sección Skills - Tecnologías */}
           <section id="skills">
             <TechSkills />
@@ -45,11 +40,6 @@ function App() {
           {/* Sección Projects - Proyectos realizados */}
           <section id="projects">
             <Projects />
-          </section>
-
-          {/* Sección Contact - Formulario de contacto */}
-          <section id="contact">
-            <Contact />
           </section>
 
           {/* Footer - Información adicional y redes sociales */}

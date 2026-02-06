@@ -26,12 +26,9 @@ export default function Hero() {
           
           {/* Botones */}
           <div className="flex gap-4 flex-wrap">
-            <button className="px-6 py-3 border-2 border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 font-medium">
-              Contratar
-            </button>
-            <button className="px-6 py-3 border-2 border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 font-medium">
+            <a href="/cv.pdf" download className="px-6 py-3 border-2 border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 font-medium">
               Descargar CV
-            </button>
+            </a>
           </div>
           
           {/* Redes Sociales */}

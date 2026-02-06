@@ -15,10 +15,8 @@ export default function Header() {
 
   const navItems = [
     { name: 'Inicio', id: 'hero' },
-    { name: 'Sobre mí', id: 'about' },
     { name: 'Skills', id: 'skills' },
-    { name: 'Proyectos', id: 'projects' },
-    { name: 'Contacto', id: 'contact' }
+    { name: 'Proyectos', id: 'projects' }
   ];
 
   return (
