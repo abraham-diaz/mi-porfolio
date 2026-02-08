@@ -26,9 +26,14 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center justify-center gap-4">
+        <div className="flex items-center justify-between gap-4">
+          {/* Logo */}
+          <a href="#hero" onClick={() => handleNavigation('hero')} className="flex-shrink-0">
+            <img src="/images/logo.png" alt="Abraham Díaz" className="h-16 w-auto" />
+          </a>
+
           {/* Navegación Desktop - Estilo Pill Centrado */}
-          <nav className={'bg-white/20 backdrop-blur-sm flex gap-2 p-2 rounded-full'}>
+          <nav className={'hidden md:flex bg-white/20 backdrop-blur-sm gap-2 p-2 rounded-full'}>
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -46,40 +51,43 @@ export default function Header() {
             ))}
           </nav>
 
+          {/* Spacer para mantener la nav centrada */}
+          <div className="w-10 flex-shrink-0 hidden md:block"></div>
+
           {/* Botón menú móvil */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-2 rounded-lg transition-colors ${
-              isScrolled ? 'text-gray-900' : 'text-white'
+              isScrolled ? 'text-gray-900' : 'text-black'
             }`}
             aria-label="Abrir menú"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-
-          {/* Menú móvil */}
-          {isMobileMenuOpen && (
-            <nav className={`md:hidden space-y-2 rounded-2xl p-2 ${
-              isScrolled ? 'bg-gray-100' : 'bg-white/20 backdrop-blur-sm'
-            }`}>
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavigation(item.id)}
-                  className={`block w-full text-center px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                    activeSection === item.id
-                      ? 'bg-gray-900 text-white shadow-lg'
-                      : isScrolled
-                      ? 'text-gray-700 hover:bg-white'
-                      : 'text-white hover:bg-white/20'
-                  }`}
-                >
-                  {item.name}
-                </button>
-              ))}
-            </nav>
-          )}
         </div>
+
+        {/* Menú móvil */}
+        {isMobileMenuOpen && (
+          <nav className={`md:hidden mt-4 space-y-2 rounded-2xl p-2 ${
+            isScrolled ? 'bg-gray-100' : 'bg-white/20 backdrop-blur-sm'
+          }`}>
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleNavigation(item.id)}
+                className={`block w-full text-center px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  activeSection === item.id
+                    ? 'bg-gray-900 text-white shadow-lg'
+                    : isScrolled
+                    ? 'text-gray-700 hover:bg-white'
+                    : 'text-black hover:bg-white/20'
+                }`}
+              >
+                {item.name}
+              </button>
+            ))}
+          </nav>
+        )}
       </div>
     </header>
   );

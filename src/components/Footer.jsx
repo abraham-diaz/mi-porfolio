@@ -4,9 +4,9 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <p className="text-gray-400">
-            © 2024 Tu Nombre. Todos los derechos reservados.
+            Abraham DÃ­az AhijÃ³n. Todos los derechos reservados.
           </p>
-          {/* Aquí puedes añadir links a redes sociales, info adicional, etc. */}
+          {/* Aquï¿½ puedes aï¿½adir links a redes sociales, info adicional, etc. */}
         </div>
       </div>
     </footer>
