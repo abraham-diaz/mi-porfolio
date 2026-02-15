@@ -3,7 +3,7 @@ import { ReactIcon, ViteIcon, TailwindIcon, JavaScriptIcon, NodeIcon, TypeScript
 
 export default function Hero() {
   return (
- <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6">
+ <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6 pt-24 md:pt-0">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
         
         {/* Columna Izquierda - Texto */}
