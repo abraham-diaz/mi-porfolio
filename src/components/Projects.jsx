@@ -3,7 +3,7 @@ const projects = [
     title: 'GLaDOs',
     description: 'Sistema de gestión de conocimiento personal con IA. Captura texto libre, genera embeddings duales (MiniLM + MPNet) y organiza el conocimiento en conceptos que evolucionan automáticamente según su recurrencia.',
     technologies: ['TypeScript', 'Express', 'FastAPI', 'PostgreSQL', 'pgvector', 'Docker'],
-    github: null,
+    github: 'https://github.com/abraham-diaz/GLaDos',
     image: '/images/glados.png',
     color: 'from-amber-400 to-orange-600',
   },
